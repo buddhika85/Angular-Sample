@@ -15,6 +15,8 @@
   Add Server
 </button>
 <!-- <p [innerText]="allowNewServer"></p> -->
-<p style="color: brown">{{ serverCreationStatus }}</p>
-<app-server></app-server>
-<app-server></app-server>
+
+<!-- <p style="color: brown">{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated">server was created, server name is {{ serverName }}</p>
+
+<app-server *ngFor="let server of servers; let serverId = index"></app-server>
